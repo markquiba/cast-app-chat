@@ -2,6 +2,10 @@
 
 Real-time chat application built with React and Firebase Firestore. It allows users to sign in with just a name, send and receive messages in real-time, and sign out of the chat.
 
+<img width="1500" alt="cast-app-chat-home" src="https://github.com/user-attachments/assets/2e15e6b5-7eca-4245-a9c0-75bcff2b6b2b">
+
+<img width="1500" alt="cast-app-chat-emojis" src="https://github.com/user-attachments/assets/a5c94cd6-f4d3-4174-ac75-3bb5abffb702">
+
 ## Features
 
 - Real-time messaging with Firebase Firestore.
@@ -46,3 +50,11 @@ Real-time chat application built with React and Firebase Firestore. It allows us
 - Introduce API rate limiting to manage and prevent excessive usage.
 - Improve error handling and recovery system.
 - Implement user analytics to monitor engagement and chat interactions.
+
+### Screenshots
+
+<img width="1500" alt="cast-app-chat-owner-message" src="https://github.com/user-attachments/assets/83275272-373b-464d-a2c5-4ce472a8491b">
+
+<img width="1500" alt="cast-app-chat-sign-out" src="https://github.com/user-attachments/assets/a1620363-04d7-40da-8f00-4ddaeadb3207">
+
+<img width="1500" alt="cast-app-chat-conv" src="https://github.com/user-attachments/assets/54552577-c12b-4d2c-82d8-2549665cd838">
