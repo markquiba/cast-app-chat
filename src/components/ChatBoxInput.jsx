@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import EmojiPicker from 'emoji-picker-react';
+import styled from 'styled-components';
+import { Smile } from 'react-feather';
 
 const ChatBoxInput = ({ onSend }) => {
   const [chatBoxInput, setChatBoxInput] = useState('');
@@ -29,19 +31,58 @@ const ChatBoxInput = ({ onSend }) => {
   };
 
   return (
-    <div>
-      <button onClick={() => setShowEmojiPicker((previous) => !previous)}>
-        🙂
-      </button>
-      <textarea
+    <ChatInputContainer>
+      <TextArea
         value={chatBoxInput}
         onChange={(e) => setChatBoxInput(e.target.value)}
         onKeyDown={handleKeyDown}
+        placeholder="Aa"
       />
-      <button onClick={handleSend}>Send</button>
-      {showEmojiPicker && <EmojiPicker onEmojiClick={handleEmojiClick} />}
-    </div>
+      <EmojiSelector
+        onClick={() => setShowEmojiPicker((previous) => !previous)}
+      >
+        <Smile />
+      </EmojiSelector>
+      {showEmojiPicker && (
+        <EmojiPickerContainer>
+          <EmojiPicker onEmojiClick={handleEmojiClick} />
+        </EmojiPickerContainer>
+      )}
+    </ChatInputContainer>
   );
 };
+
+const ChatInputContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+`;
+
+const EmojiSelector = styled.div`
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
+
+const TextArea = styled.textarea`
+  flex: 1;
+  height: 20px;
+  padding: 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  background-color: #f0f2f5;
+  resize: none;
+  font-size: 1.2em;
+`;
+
+const EmojiPickerContainer = styled.div`
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 1000;
+`;
 
 export default ChatBoxInput;
