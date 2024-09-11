@@ -35,20 +35,10 @@ const ChatBoxMessages = () => {
       }));
 
       setMessages(newMessages);
-
-      const atBottom =
-        messageListRef.current.scrollHeight ===
-        messageListRef.current.scrollTop + messageListRef.current.clientHeight;
-
-      if (atBottom) {
-        setShowJumpToLatestButton(false);
-      } else {
-        setShowJumpToLatestButton(true);
-      }
     });
 
     return () => unsubscribe();
-  }, [scrollToBottom]);
+  }, []);
 
   useEffect(() => {
     if (!isEmpty(messages)) {
